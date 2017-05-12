@@ -32,7 +32,15 @@
             </Menu>
         </i-col>
         <i-col span="19">
-            <div class="layout-content-main">内容区域</div>
+            <!--<div class="layout-header"></div>-->
+            <div class="layout-breadcrumb">
+                <Breadcrumb>
+                    <Breadcrumb-item href="#">用户模块</Breadcrumb-item>
+                    <Breadcrumb-item>用户管理</Breadcrumb-item>
+                </Breadcrumb>
+            </div>
+            <!--这里放置各种路由-->
+            <router-view></router-view>
         </i-col>
     </Row>
   </div>
@@ -60,6 +68,11 @@ export default {
       background: #fff;
       border-radius: 4px;
   }
+  /*.layout-header{
+      height: 0;
+      background: #fff;
+      box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  }*/
   .layout-content-main{
       padding: 10px;
   }
