@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import store from '../vuex'
 
-import User from '../components/user/User.vue'
 // import App from '../App.vue'
 
 // import _ from 'lodash'
@@ -12,7 +11,8 @@ Vue.use(Router)
 export const router = new Router({
   mode: 'history',
   routes: [
-    { path: '/user', component: User },
+    // 组件懒加载，这样可防止组件太多时首屏打开慢的问题
+    { path: '/user', component: resolve => require(['../components/user/User.vue'], resolve) },
     {path: '/role', component: null}
   ]
 })

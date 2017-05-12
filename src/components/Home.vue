@@ -4,21 +4,17 @@
     <div class="layout-content">
     <Row>
         <i-col span="3">
-            <Menu active-name="1-1" width="auto" :open-names="['1']">
+            <Menu active-name="1-1" width="auto" :open-names="['1']" theme="light">
                 <Submenu name="1">
                     <template slot="title">
                         <Icon type="ios-navigate"></Icon>
                         用户模块
                     </template>
-                    <Menu-item name="1-1">
-                        <router-link to="/user">
-                            用户管理
-                        </router-link>
+                    <Menu-item name="1-1" v-link="{path: '/user'}">
+                        用户管理
                     </Menu-item>
-                    <Menu-item name="1-2">
-                        <router-link to="/role">
-                            角色管理
-                        </router-link>
+                    <Menu-item name="1-2" v-link="{path: '/role'}">
+                        角色管理
                     </Menu-item>
                 </Submenu>
                 <Submenu name="2">
@@ -26,16 +22,24 @@
                         <Icon type="ios-keypad"></Icon>
                         报警管理
                     </template>
-                    <Menu-item name="2-1">报警端子</Menu-item>
-                    <Menu-item name="2-2">报警管理</Menu-item>
+                    <Menu-item name="2-1" v-link="{path: '/role1'}">
+                        报警端子
+                    </Menu-item>
+                    <Menu-item name="2-2" v-link="{path: '/role2'}">
+                        报警管理
+                    </Menu-item>
                 </Submenu>
                 <Submenu name="3">
                     <template slot="title">
                         <Icon type="ios-analytics"></Icon>
                         系统设置
                     </template>
-                    <Menu-item name="3-1">服务器管理</Menu-item>
-                    <Menu-item name="3-2">服务管理</Menu-item>
+                    <Menu-item name="3-1" v-link="{path: '/role23'}">
+                        服务器管理
+                    </Menu-item>
+                    <Menu-item name="3-2" v-link="{path: '/role24'}">
+                        服务管理
+                    </Menu-item>
                 </Submenu>
             </Menu>
         </i-col>
