@@ -51,14 +51,16 @@ export default {
               })
               this.$store.dispatch('setUserInfo', JSON.stringify(res.data.data))
             } else {
-              this.$Notice.error('用户名或密码错误')
+              this.$Notice.error({
+                desc: '用户名或密码错误'
+              })
             }
           }).catch(err => {
             console.log(err)
-            this.$Notice.error(err.message)
+            this.$Notice.error({
+              desc: err.message
+            })
           })
-        } else {
-          this.$Notice.error('表单验证失败!')
         }
       })
     }

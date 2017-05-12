@@ -1,17 +1,66 @@
 <template>
   <div class="layout">
     <Top></Top>
-    <Left></Left>
+    <div class="layout-content">
+    <Row>
+        <i-col span="3">
+            <Menu active-name="1-1" width="auto" :open-names="['1']">
+                <Submenu name="1">
+                    <template slot="title">
+                        <Icon type="ios-navigate"></Icon>
+                        用户模块
+                    </template>
+                    <Menu-item name="1-1">用户管理</Menu-item>
+                    <Menu-item name="1-2">角色管理</Menu-item>
+                </Submenu>
+                <Submenu name="2">
+                    <template slot="title">
+                        <Icon type="ios-keypad"></Icon>
+                        报警管理
+                    </template>
+                    <Menu-item name="2-1">报警端子</Menu-item>
+                    <Menu-item name="2-2">报警管理</Menu-item>
+                </Submenu>
+                <Submenu name="3">
+                    <template slot="title">
+                        <Icon type="ios-analytics"></Icon>
+                        系统设置
+                    </template>
+                    <Menu-item name="3-1">服务器管理</Menu-item>
+                    <Menu-item name="3-2">服务管理</Menu-item>
+                </Submenu>
+            </Menu>
+        </i-col>
+        <i-col span="19">
+            <div class="layout-content-main">内容区域</div>
+        </i-col>
+    </Row>
+  </div>
     <Bottom></Bottom>
   </div>
 </template>
 <script>
 import Top from './base/Header.vue'
 import Bottom from './base/Footer.vue'
-import Left from './base/Left.vue'
 export default {
   components: {
-    Top, Bottom, Left
+    Top, Bottom
   }
 }
 </script>
+
+<style scoped>
+  .layout-breadcrumb{
+      padding: 10px 15px 0;
+  }
+  .layout-content{
+      min-height: 300px;
+      margin: 15px;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 4px;
+  }
+  .layout-content-main{
+      padding: 10px;
+  }
+</style>

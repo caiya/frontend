@@ -74,14 +74,14 @@ export default {
         background: #f5f7f9;
     }
     .layout-logo{
-        width: 100px;
-        height: 30px;
-        background: #5b6270 url(../../assets/favicon.jpg);
+        width: 169px;
+        height: 49px;
+        background: #5b6270 url(../../assets/logo1.jpg) no-repeat;
         border-radius: 3px;
         float: left;
         position: relative;
-        top: 15px;
-        left: 20px;
+        top: 8px;
+        left: 40px;
     }
     .layout-nav{
         width: 520px;
