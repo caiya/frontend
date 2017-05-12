@@ -30,6 +30,14 @@ const mutations = {
 const getters = {
   logined (state) {
     return state.userinfo !== '' && state.userinfo !== '{}'
+  },
+  userinfo (state) {
+    if (state.userinfo !== '' && state.userinfo !== '{}' && typeof state.userinfo === 'string') {
+      return JSON.parse(state.userinfo)
+    } else if (typeof state.userinfo === 'object') {
+      return state.userinfo
+    }
+    return null
   }
 }
 

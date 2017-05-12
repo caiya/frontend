@@ -1,17 +1,17 @@
 <template>
-    <div class="layout">
-        <Header></Header>
-        <Left></Left>
-        <Footer></Footer>
-    </div>
+  <div class="layout">
+    <Top></Top>
+    <Left></Left>
+    <Bottom></Bottom>
+  </div>
 </template>
 <script>
-import Header from './base/Header.vue'
-import Footer from './base/Footer.vue'
+import Top from './base/Header.vue'
+import Bottom from './base/Footer.vue'
 import Left from './base/Left.vue'
 export default {
   components: {
-    Header, Footer, Left
+    Top, Bottom, Left
   }
 }
 </script>

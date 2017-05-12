@@ -20,6 +20,17 @@
                     导航四
                 </Menu-item>
             </div>
+            <div class="layout-nav-right">
+                <Dropdown style="margin-left: 20px" placement="bottom-end" @on-click="logout" trigger="click">
+                    <a href="javascript:void(0)">
+                        <Icon type="navicon-round"></Icon>&nbsp;{{username}}
+                    </a>
+                    <Dropdown-menu slot="list">
+                        <Dropdown-item name="uppass"><h4>修改密码</h4></Dropdown-item>
+                        <Dropdown-item name="logout"><h4>退出</h4></Dropdown-item>
+                    </Dropdown-menu>
+                </Dropdown>
+            </div>
         </Menu>
         <Menu mode="horizontal" active-name="1">
             <div class="layout-assistant">
@@ -36,11 +47,22 @@ export default {
   name: 'header',
   methods: {
     ...mapMutations(['LOGOUT']),
-    logout () {
-      this.LOGOUT()
-      this.$Notice.success({
-        desc: '已退出'
-      })
+    logout (name) {
+      if (name === 'logout') {
+        this.LOGOUT()
+        this.$Notice.success({
+          desc: '已退出'
+        })
+      } else {
+        this.$Notice.success({
+          desc: '修改密码了'
+        })
+      }
+    }
+  },
+  data () {
+    return {
+      username: typeof this.$store.getters.userinfo === 'string' ? JSON.parse(this.$store.getters.userinfo).loginname : this.$store.getters.userinfo.loginname
     }
   }
 }
@@ -54,7 +76,7 @@ export default {
     .layout-logo{
         width: 100px;
         height: 30px;
-        background: #5b6270 url(../../assets/logo.png);
+        background: #5b6270 url(../../assets/favicon.jpg);
         border-radius: 3px;
         float: left;
         position: relative;
@@ -62,8 +84,12 @@ export default {
         left: 20px;
     }
     .layout-nav{
-        width: 420px;
+        width: 520px;
         margin: 0 auto;
+    }
+    .layout-nav-right{
+        width: 120px;
+        float: right;
     }
     .layout-assistant{
         width: 300px;
