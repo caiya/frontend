@@ -10,7 +10,11 @@
                         <Icon type="ios-navigate"></Icon>
                         用户模块
                     </template>
-                    <Menu-item name="1-1">用户管理</Menu-item>
+                    <Menu-item name="1-1">
+                        <router-link to="/user">
+                            用户管理
+                        </router-link>
+                    </Menu-item>
                     <Menu-item name="1-2">角色管理</Menu-item>
                 </Submenu>
                 <Submenu name="2">
