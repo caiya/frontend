@@ -1,13 +1,17 @@
 import * as types from '../mutation.types'
+import * as http from '../../api/http'
 
 const state = {
-  userinfo: JSON.stringify(localStorage.getItem('userinfo') || {}),
-  accessToken: ''
+  userinfo: JSON.stringify(localStorage.getItem('userinfo') || {})
 }
 
 const actions = {
-  setUserInfo ({commit}, userinfo) {
+  setUserInfo ({ commit }, userinfo) {
+    localStorage.setItem('userinfo', userinfo)
     commit(types.SET_USERINFO, userinfo)
+  },
+  login ({dispatch, commit, getters}, plyload) {
+    return http.get('/user/caiya', {})
   }
 }
 
@@ -23,7 +27,7 @@ const getters = {
   }
 }
 
-export default{
+export default {
   state,
   actions,
   mutations,
