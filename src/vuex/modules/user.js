@@ -1,6 +1,8 @@
 import * as types from '../mutation.types'
 import * as http from '../../api/http'
 
+// import _ from 'lodash'
+
 const state = {
   userinfo: JSON.stringify(localStorage.getItem('userinfo') || {})
 }
@@ -18,12 +20,16 @@ const actions = {
 const mutations = {
   [types.SET_USERINFO] (state, userinfo) {
     state.userinfo = userinfo
+  },
+  [types.LOGOUT] (state) {
+    localStorage.setItem('userinfo', '')
+    state.userinfo = ''
   }
 }
 
 const getters = {
   logined (state) {
-    return !!(state.userinfo)
+    return state.userinfo !== '' && state.userinfo !== '{}'
   }
 }
 

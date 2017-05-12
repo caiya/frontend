@@ -1,13 +1,17 @@
 <template>
-  <h1>{{msg}}</h1>
+    <div class="layout">
+        <Header></Header>
+        <Left></Left>
+        <Footer></Footer>
+    </div>
 </template>
-
 <script>
+import Header from './base/Header.vue'
+import Footer from './base/Footer.vue'
+import Left from './base/Left.vue'
 export default {
-  data () {
-    return {
-      msg: '我是登录成功页面'
-    }
+  components: {
+    Header, Footer, Left
   }
 }
 </script>

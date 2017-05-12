@@ -22,18 +22,25 @@ export default {
   },
   watch: {
     logined (newValue) {
-      console.log('-------------------newValue-------------------', newValue)
-      this.currentView = newValue ? 'Home' : 'Login'
+      this.setView()
     }
   },
   data () {
     return {
       currentView: 'Login'
     }
+  },
+  mounted () {
+    this.setView()
+  },
+  methods: {
+    setView () {
+      this.currentView = this.logined ? 'Home' : 'Login'
+    }
   }
 }
 </script>
 
 <style>
-@import "../static/css/main.css"
+@import "./assets/css/main.css"
 </style>
