@@ -15,7 +15,11 @@
                             用户管理
                         </router-link>
                     </Menu-item>
-                    <Menu-item name="1-2">角色管理</Menu-item>
+                    <Menu-item name="1-2">
+                        <router-link to="/role">
+                            角色管理
+                        </router-link>
+                    </Menu-item>
                 </Submenu>
                 <Submenu name="2">
                     <template slot="title">

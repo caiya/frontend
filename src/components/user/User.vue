@@ -227,8 +227,10 @@ export default {
       this.currentIndex = index
     },
     ok () {
-      // this.$Message.info('点击了确定')
       this.data5.splice(this.currentIndex, 1)
+      this.$Notice.success({
+        desc: '已删除'
+      })
     },
     cancel () {
       // this.$Message.info('点击了取消')
