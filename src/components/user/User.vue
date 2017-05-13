@@ -9,6 +9,7 @@
     <Row>
       <Col span="24">
         <Table stripe border height="400" :columns="columns6" :data="data5"></Table>
+        <Pa :total="total" :current="current" :size="pageSize"></Pa>
       </Col>
     </Row>
     <Modal
@@ -21,13 +22,20 @@
   </div>
 </template>
 <script>
+import Pa from '../base/Page.vue'
 export default {
+  components: {
+    Pa
+  },
   data () {
     var _this = this
     return {
-      username: '',
-      isVisible: false,
-      currentIndex: 0,
+      total: 14,    // 总共数据条数
+      current: 1,   // 当前页码
+      pageSize: 10,   // 页大小
+      username: '',   // 搜索框的用户名
+      isVisible: false,   // 对话框可见性
+      currentIndex: 0,    // 当前选中的table索引
       columns6: [
         {
           type: 'selection',
