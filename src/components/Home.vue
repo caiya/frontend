@@ -69,10 +69,13 @@ export default {
   methods: {
     onSelect (menuName) {
       this.$router.push(menuName)
+    },
+    init () {
+      this.$router.push('/user')      // 默认打开user界面的数据
     }
   },
   mounted () {
-    this.$router.push('/user')      // 默认打开user界面的数据
+    this.init()
   }
 }
 </script>
