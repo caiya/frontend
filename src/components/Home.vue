@@ -4,28 +4,28 @@
     <div class="layout-content">
     <Row>
         <i-col span="3">
-            <Menu active-name="1-1" width="auto" :open-names="['1']" theme="light">
-                <Submenu name="1">
+            <Menu active-name="/user" @on-select="onSelect" width="auto" :open-names="['user']" theme="light">
+                <Submenu name="user">
                     <template slot="title">
                         <Icon type="ios-navigate"></Icon>
                         用户模块
                     </template>
-                    <Menu-item name="1-1" v-link="{path: '/user'}">
+                    <Menu-item name="/user">
                         用户管理
                     </Menu-item>
-                    <Menu-item name="1-2" v-link="{path: '/role'}">
+                    <Menu-item name="/role">
                         角色管理
                     </Menu-item>
                 </Submenu>
-                <Submenu name="2">
+                <Submenu name="alarm">
                     <template slot="title">
                         <Icon type="ios-keypad"></Icon>
                         报警管理
                     </template>
-                    <Menu-item name="2-1" v-link="{path: '/role1'}">
+                    <Menu-item name="2-1">
                         报警端子
                     </Menu-item>
-                    <Menu-item name="2-2" v-link="{path: '/role2'}">
+                    <Menu-item name="2-2">
                         报警管理
                     </Menu-item>
                 </Submenu>
@@ -34,10 +34,10 @@
                         <Icon type="ios-analytics"></Icon>
                         系统设置
                     </template>
-                    <Menu-item name="3-1" v-link="{path: '/role23'}">
+                    <Menu-item name="3-1">
                         服务器管理
                     </Menu-item>
-                    <Menu-item name="3-2" v-link="{path: '/role24'}">
+                    <Menu-item name="3-2">
                         服务管理
                     </Menu-item>
                 </Submenu>
@@ -65,6 +65,14 @@ import Bottom from './base/Footer.vue'
 export default {
   components: {
     Top, Bottom
+  },
+  methods: {
+    onSelect (menuName) {
+      this.$router.push(menuName)
+    }
+  },
+  mounted () {
+    this.$router.push('/user')      // 默认打开user界面的数据
   }
 }
 </script>
