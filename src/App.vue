@@ -41,6 +41,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import "./assets/css/main.css"
 </style>
